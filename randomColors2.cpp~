@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+#define W 1920
+#define H 1080
+
+void put_pixel(unsigned char raster[W][H][3], int x, int y, unsigned char r, unsigned char g, unsigned char b);
+void printRaster(unsigned char * raster, char nombre[]);
+int main(){
+	unsigned char myRaster[W][H][3];	
+	srand(time(NULL));
+	for(int i=0;i<1920; i++){
+		for(int j=0;j<1080;j++){
+			put_pixel((unsigned char *)myRaster, i, j, rand()%256, rand()%256, rand()%256 );
+		}		
+	}
+	printRaster(myRaster, "imageRaster.ppa");
+}
+
+void put_pixel(unsigned char * raster, int x, int y, unsigned char r, unsigned char g, unsigned char b){
+	raster[x][y][0] = r;
+	raster[x][y][1] = g;
+	raster[x][y][2] = b;
+}
+
+void printRaster(unsigned char * raster, char nombre[]){
+	FILE *f;
+	srand(time(NULL));
+	f = fopen(nombre, "w");
+	fprintf(f, "P3\n");	
+	fprintf(f, "1920 1080 255\n");
+	for(int i=0;i<1920; i++){
+		for(int j=0;j<1080;j++){
+			fprintf(f, "%d %d %d ", raster[x][y][0], raster[x][y][1], raster[x][y][2] );
+		}
+		fprintf(f, "\n");
+	}
+	fclose(f);
+}

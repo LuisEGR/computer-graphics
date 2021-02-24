@@ -1,0 +1,8 @@
+a.out: randomLines.cpp
+	g++ -std=c++11 randomLines.cpp -Wall -pthread
+
+run: a.out
+	./a.out
+clean:
+	rm -f a.out
+

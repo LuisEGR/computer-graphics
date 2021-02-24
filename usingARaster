@@ -1,0 +1,12 @@
+Using a raster
+
+- Use an array of unsigned char as raster
+- Program the put-pixel
+
+unsigned char Raster[1080][1920][3]
+void put_pixel(...raster, _x, ---y, r, g, b) // to put a color in one specific raster
+{
+	Raster[y][x][0] = r;
+	Raster[y][x][1] = g;
+	Raster[y][x][2] = b;
+}

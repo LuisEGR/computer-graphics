@@ -1,0 +1,8 @@
+Creating extra threads
+library POSIX Thread "pthreas"
+
+Practice 2
+> FULL HD
+> PPM
+> Random lines
+> Random Colors

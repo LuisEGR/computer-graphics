@@ -1,0 +1,8 @@
+Practice Animation
+- Install Blender
+- Download a 3D model and see it with blender
+- Program a c program that generates frames ppm of the 3d
+object animated rotation 360 degrees, 360 frames
+- Create 1000 random FHD images .ppm
+
+-Create a video 3min using the rotation of the model 24fps
